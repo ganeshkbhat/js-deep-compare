@@ -632,3 +632,23 @@ export function matchValues(objectOne: any, objectTwo: any): boolean {
   }
   return false;
 }
+
+/**
+ *
+ *
+ * @export
+ * @param {*} objectOne
+ * @param {*} objectTwo
+ * @return {*}  {*}
+ */
+export function diff(objectOne: any, objectTwo: any): any {}
+
+/**
+ *
+ *
+ * @export
+ * @param {*} objectOne
+ * @param {*} objectTwo
+ * @return {*}  {*}
+ */
+export function intersection(objectOne: any, objectTwo: any): any {}
