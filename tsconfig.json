@@ -1,6 +1,5 @@
 {
   "compileOnSave": false,
-  "extends": "@sindresorhus/tsconfig",
   "compilerOptions": {
     "outDir": "./lib",
     "sourceMap": true,

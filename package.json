@@ -4,7 +4,7 @@
   "description": "Deep compare JS objects, check types, diff, and find intersect using the npm module",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require ts-node/register src/**/*.spec.ts",
+    "test": "mocha --require ts-node/register tests/*.test.ts",
     "lint": "eslint src --fix --ext .ts --ignore-path .gitignore",
     "build": "del-cli lib && tsc",
     "prepublishOnly": "npm run build",
