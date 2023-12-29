@@ -22,7 +22,7 @@
  * @export
  * @param {*} obj
  */
-export function getTypeObject(obj: any): any | null | undefined {
+export function which(obj: any): any | null | undefined {
   let t;
   switch (obj) {
     case obj instanceof String:
@@ -522,7 +522,7 @@ export function typeObject(typename: string): any | null | undefined {
  * @param {*} object
  * @return {*}  {(string | void)}
  */
-export function which(object: any, returnType?: string): string | void {
+export function is(object: any, returnType?: string): string | void {
   let tmpType;
   if (typeof object !== "object") {
     tmpType = typeof object;
