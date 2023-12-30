@@ -20,7 +20,7 @@ import { expect } from "chai";
 import sinon from "sinon";
 import { describe, it } from "mocha";
 
-import { deepEqual, matchTypes } from "../src/matchers";
+import { deepEqual, matchTypes } from "../src/types";
 
 // // Function to compare two objects
 // function deepEqual(obj1, obj2) {

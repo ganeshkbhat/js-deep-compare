@@ -20,7 +20,7 @@ import { expect } from "chai";
 import sinon from "sinon";
 import { describe, it } from "mocha";
 
-import { matchValues } from "../src/matchers";
+import { matchValues } from "../src/types";
 
 describe('Object Comparison Tests', () => {
   it('should compare two equal objects', () => {

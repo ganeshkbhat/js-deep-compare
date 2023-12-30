@@ -20,7 +20,7 @@ import { expect } from "chai";
 import sinon from "sinon";
 import { describe, it } from "mocha";
 
-import { which } from "../src/matchers";
+import { which } from "../src/types";
 
 
 describe('Object Comparison Tests', () => {
