@@ -16,3 +16,4 @@
 
 'use strict';
 
+export { default as validators } from "./src";

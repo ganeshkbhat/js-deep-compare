@@ -1,20 +1,20 @@
 /**
- * 
+ *
  * Package: diff-match
  * Author: Ganesh B
- * Description: 
+ * Description:
  * Install: npm i diff-match --save
  * Github: https://github.com/ganeshkbhat/diff-match
  * npmjs Link: https://www.npmjs.com/package/diff-match
  * File: src/core/
  * File Description: Compare, match, and get the types of (primitives) objects
- * 
- * 
+ *
+ *
 */
 
 /* eslint no-console: 0 */
 
-'use strict';
+"use strict";
 
 /**
  *
@@ -45,8 +45,8 @@ export const which = function (obj: any): any | null | undefined {
       t = String;
     case obj instanceof Error:
       t = String;
-    case obj instanceof AggregateError:
-      t = String;
+    // case obj instanceof AggregateError:
+    //   t = String;
     case obj instanceof EvalError:
       t = String;
     case obj instanceof RangeError:
@@ -59,12 +59,12 @@ export const which = function (obj: any): any | null | undefined {
       t = String;
     case obj instanceof URIError:
       t = String;
-    case obj instanceof InternalError:
-      t = String;
+    // case obj instanceof InternalError:
+    //   t = String;
     case obj instanceof BigInt:
       t = String;
-    case obj instanceof Math:
-      t = String;
+    // case obj instanceof Math:
+    //   t = String;
     case obj instanceof Date:
       t = String;
     case obj instanceof RegExp:
@@ -97,46 +97,46 @@ export const which = function (obj: any): any | null | undefined {
       t = String;
     case obj instanceof DataView:
       t = String;
-    case obj instanceof JSON:
-      t = String;
-    case obj instanceof Atomics:
-      t = String;
-    case obj instanceof WeakRef:
-      t = String;
-    case obj instanceof FinalizationRegistry:
-      t = String;
-    case obj instanceof Iterator:
-      t = String;
-    case obj instanceof AsyncIterator:
-      t = String;
+    // case obj instanceof JSON:
+    //   t = String;
+    // case obj instanceof Atomics:
+    //   t = String;
+    // case obj instanceof WeakRef:
+    //   t = String;
+    // case obj instanceof FinalizationRegistry:
+    //   t = String;
+    // case obj instanceof Iterator:
+    //   t = String;
+    // case obj instanceof AsyncIterator:
+    //   t = String;
     case obj instanceof Promise:
       t = String;
-    case obj instanceof GeneratorFunction:
-      t = String;
-    case obj instanceof AsyncGeneratorFunction:
-      t = String;
-    case obj instanceof Generator:
-      t = String;
-    case obj instanceof AsyncGenerator:
-      t = String;
-    case obj instanceof AsyncFunction:
-      t = String;
-    case obj instanceof Reflect:
-      t = String;
+    // case obj instanceof GeneratorFunction:
+    //   t = String;
+    // case obj instanceof AsyncGeneratorFunction:
+    //   t = String;
+    // case obj instanceof Generator:
+    //   t = String;
+    // case obj instanceof AsyncGenerator:
+    //   t = String;
+    // case obj instanceof AsyncFunction:
+    //   t = String;
+    // case obj instanceof Reflect:
+    //   t = String;
     case obj instanceof Proxy:
       t = String;
-    case obj instanceof Intl:
-      t = String;
+    // case obj instanceof Intl:
+    //   t = String;
     case obj instanceof Intl.Collator:
       t = String;
     case obj instanceof Intl.DateTimeFormat:
       t = String;
     case obj instanceof Intl.DisplayNames:
       t = String;
-    case obj instanceof Intl.DurationFormat:
-      t = String;
-    case obj instanceof Intl.ListFormat:
-      t = String;
+    // case obj instanceof Intl.DurationFormat:
+    //   t = String;
+    // case obj instanceof Intl.ListFormat:
+    //   t = String;
     case obj instanceof Intl.Locale:
       t = String;
     case obj instanceof Intl.NumberFormat:
@@ -145,375 +145,375 @@ export const which = function (obj: any): any | null | undefined {
       t = String;
     case obj instanceof Intl.RelativeTimeFormat:
       t = String;
-    case obj instanceof Intl.Segmenter:
-      t = String;
-    case obj instanceof WebAssembly:
-      t = String;
+    // case obj instanceof Intl.Segmenter:
+    //   t = String;
+    // case obj instanceof WebAssembly:
+    //   t = String;
     case obj instanceof Worker:
       t = String;
     case obj instanceof ServiceWorkerContainer:
       t = String;
-    case obj instanceof ServiceWorkerGlobalScope:
-      t = String;
-    case obj instanceof FetchEvent:
-      t = String;
+    // case obj instanceof ServiceWorkerGlobalScope:
+    //   t = String;
+    // case obj instanceof FetchEvent:
+    //   t = String;
     case obj instanceof Event:
       t = String;
-    case obj instanceof globalThis:
-      t = String;
-    case obj instanceof global:
-      t = String;
-    case obj instanceof DOM:
-      t = String;
+    // case obj instanceof globalThis:
+    //   t = String;
+    // case obj instanceof global:
+    //   t = String;
+    // case obj instanceof DOM:
+    //   t = String;
     case obj instanceof Navigator:
       t = String;
     case obj instanceof Window:
       t = String;
-    case obj instanceof :
-      t = String;
-    case obj instanceof :
-      t = String;
-    case obj instanceof :
-      t = String;
-    case obj instanceof :
-      t = String;
-    case obj instanceof :
-      t = String;
-    case obj instanceof :
-      t = String;
-    case obj instanceof :
+    // case obj instanceof :
+    //   t = String;
+    // case obj instanceof :
+    //   t = String;
+    // case obj instanceof :
+    //   t = String;
+    // case obj instanceof :
+    //   t = String;
+    // case obj instanceof :
+    //   t = String;
+    // case obj instanceof :
+    //   t = String;
+    default:
       t = String;
   }
-
-}
+  return t;
+};
 
 /**
  *
  *
  * @export
  * @param {string} typename
- * @return {*} 
+ * @return {*}
  */
 export const typeObject = function (typename: string): any | null | undefined {
   let t;
   switch (typename) {
-    case 'string':
+    case "string":
       t = String;
-    case 'number':
+    case "number":
       t = Number;
-    case 'NaN':
+    case "NaN":
       t = NaN;
-    case 'boolean':
+    case "boolean":
       t = Boolean;
-    case 'null':
+    case "null":
       t = null;
-    case 'undefined':
+    case "undefined":
       t = undefined;
-    case 'array':
+    case "array":
       t = Array;
-    case 'function':
+    case "function":
       t = Function;
-    case 'map':
+    case "map":
       t = Map;
-    case 'symbol':
+    case "symbol":
       t = Symbol;
-    case 'object':
+    case "object":
       t = Object;
-    case 'set':
+    case "set":
       t = Set;
-    case 'Error':
+    case "Error":
       t = Error;
-    case 'AggregateError':
-      t = AggregateError;
-    case 'EvalError':
+    // case "AggregateError":
+    //   t = AggregateError;
+    case "EvalError":
       t = EvalError;
-    case 'RangeError':
+    case "RangeError":
       t = RangeError;
-    case 'ReferenceError':
+    case "ReferenceError":
       t = ReferenceError;
-    case 'SyntaxError':
+    case "SyntaxError":
       t = SyntaxError;
-    case 'TypeError':
+    case "TypeError":
       t = TypeError;
-    case 'URIError':
+    case "URIError":
       t = URIError;
-    case 'InternalError':
-      t = InternalError;
-    case 'BigInt':
+    // case "InternalError":
+    //   t = InternalError;
+    case "BigInt":
       t = BigInt;
-    case 'Math':
+    case "Math":
       t = Math;
-    case 'Date':
+    case "Date":
       t = Date;
-    case 'RegExp':
+    case "RegExp":
       t = RegExp;
-    case 'Int8Array':
+    case "Int8Array":
       t = Int8Array;
-    case 'Uint8Array':
+    case "Uint8Array":
       t = Uint8Array;
-    case 'Uint8ClampedArray':
+    case "Uint8ClampedArray":
       t = Uint8ClampedArray;
-    case 'Int16Array':
+    case "Int16Array":
       t = Int16Array;
-    case 'Uint16Array':
+    case "Uint16Array":
       t = Uint16Array;
-    case 'Int32Array':
+    case "Int32Array":
       t = Int32Array;
-    case 'Uint32Array':
+    case "Uint32Array":
       t = Uint32Array;
-    case 'BigInt64Array':
+    case "BigInt64Array":
       t = BigInt64Array;
-    case 'BigUint64Array':
+    case "BigUint64Array":
       t = BigUint64Array;
-    case 'Float32Array':
+    case "Float32Array":
       t = Float32Array;
-    case 'Float64Array':
+    case "Float64Array":
       t = Float64Array;
-    case 'WeakSet':
+    case "WeakSet":
       t = WeakSet;
-    case 'Set':
+    case "Set":
       t = Set;
-    case 'ArrayBuffer':
+    case "ArrayBuffer":
       t = ArrayBuffer;
-    case 'SharedArrayBuffer':
+    case "SharedArrayBuffer":
       t = SharedArrayBuffer;
-    case 'DataView':
+    case "DataView":
       t = DataView;
-    case 'Atomics':
+    case "Atomics":
       t = Atomics;
-    case 'JSON':
+    case "JSON":
       t = JSON;
-    case 'WeakRef':
-      t = WeakRef;
-    case 'FinalizationRegistry':
-      t = FinalizationRegistry;
-    case 'Iterator':
-      t = Iterator;
-    case 'AsyncIterator':
-      t = AsyncIterator;
-    case 'Promise':
+    // case "WeakRef":
+    //   t = WeakRef;
+    // case "FinalizationRegistry":
+    //   t = FinalizationRegistry;
+    // case "Iterator":
+    //   t = Iterator;
+    // case "AsyncIterator":
+    //   t = AsyncIterator;
+    case "Promise":
       t = Promise;
-    case 'GeneratorFunction':
-      t = GeneratorFunction;
-    case 'AsyncGeneratorFunction':
-      t = AsyncGeneratorFunction;
-    case 'Generator':
-      t = Generator;
-    case 'AsyncGenerator':
-      t = AsyncGenerator;
-    case 'AsyncFunction':
-      t = AsyncFunction;
-    case 'Reflect':
+    // case "GeneratorFunction":
+    //   t = GeneratorFunction;
+    // case "AsyncGeneratorFunction":
+    //   t = AsyncGeneratorFunction;
+    // case "Generator":
+    //   t = Generator;
+    // case "AsyncGenerator":
+    //   t = AsyncGenerator;
+    // case "AsyncFunction":
+    //   t = AsyncFunction;
+    case "Reflect":
       t = Reflect;
-    case 'Proxy':
+    case "Proxy":
       t = Proxy;
-    case 'Intl':
+    case "Intl":
       t = Intl;
-    case 'Intl.Collator':
+    case "Intl.Collator":
       t = Intl.Collator;
-    case 'Intl.DateTimeFormat':
+    case "Intl.DateTimeFormat":
       t = Intl.DateTimeFormat;
-    case 'Intl.DisplayNames':
+    case "Intl.DisplayNames":
       t = Intl.DisplayNames;
-    case 'Intl.DurationFormat':
-      t = Intl.DurationFormat;
-    case 'Intl.ListFormat':
-      t = Intl.ListFormat;
-    case 'Intl.Locale':
+      // case "Intl.DurationFormat":
+      //   t = Intl.DurationFormat;
+      // case "Intl.ListFormat":
+      //   t = Intl.ListFormat;
+      // case "Intl.Locale":
       t = Intl.Locale;
-    case 'Intl.NumberFormat':
+    case "Intl.NumberFormat":
       t = Intl.NumberFormat;
-    case 'Intl.PluralRules':
+    case "Intl.PluralRules":
       t = Intl.PluralRules;
-    case 'Intl.RelativeTimeFormat':
+    case "Intl.RelativeTimeFormat":
       t = Intl.RelativeTimeFormat;
-    case 'Intl.Segmenter':
-      t = Intl.Segmenter;
-    case 'WebAssembly':
+    // case "Intl.Segmenter":
+    //   t = Intl.Segmenter;
+    case "WebAssembly":
       t = WebAssembly;
-    case 'Worker':
+    case "Worker":
       t = Worker;
-    case 'ServiceWorkerContainer':
+    case "ServiceWorkerContainer":
       t = ServiceWorkerContainer;
-    case 'ServiceWorkerGlobalScope':
-      t = ServiceWorkerGlobalScope;
-    case 'FetchEvent':
-      t = FetchEvent;
-    case 'Event':
+    // case "ServiceWorkerGlobalScope":
+    //   t = ServiceWorkerGlobalScope;
+    // case "FetchEvent":
+    //   t = FetchEvent;
+    case "Event":
       t = Event;
-    case 'globalThis':
+    case "globalThis":
       t = globalThis;
-    case 'global':
+    case "global":
       t = global;
-    case 'DOM':
-      t = DOM;
-    case 'Navigator':
+    // case "DOM":
+    //   t = DOM;
+    case "Navigator":
       t = Navigator;
-    case 'Window':
+    case "Window":
       t = Window;
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
+    //   t =
     // case '':
-    //   t = 
-    case 'default':
+    //   t =
+    default:
       t = undefined;
   }
   return t;
-}
+};
 
 /**
  *
@@ -527,16 +527,19 @@ export const is = function (object: any, returnType?: string): string | void {
   if (typeof object !== "object") {
     tmpType = typeof object;
   } else if (typeof object === "object") {
-    if (object === null) { tmpType = "null" }
-    else if (object instanceof Array) { tmpType = "array" }
-    else if (object instanceof Map) { tmpType = "map" }
-    else { tmpType = "object" };
+    if (object === null) {
+      tmpType = "null";
+    } else if (object instanceof Array) {
+      tmpType = "array";
+    } else if (object instanceof Map) {
+      tmpType = "map";
+    }
   }
   if (!!returnType && returnType !== "string") {
     return typeObject(tmpType);
   }
   return tmpType;
-}
+};
 
 /**
  *
@@ -548,7 +551,7 @@ export const is = function (object: any, returnType?: string): string | void {
  */
 export const deepEqual = function (objectOne: any, objectTwo: any): boolean {
   if (typeof objectOne !== "object") {
-    if (typeof objectOne === typeof objectTwo) return true;
+    if (typeof objectOne === typeof objectTwo) { return true; };
     return false;
   } else if (typeof objectOne === "object") {
 
@@ -559,19 +562,19 @@ export const deepEqual = function (objectOne: any, objectTwo: any): boolean {
     const keys1 = Object.keys(objectOne);
     const keys2 = Object.keys(objectTwo);
 
-    if (keys1.length !== keys2.length) return false;
+    if (keys1.length !== keys2.length) { return false; };
 
     for (let i = 0; i < keys1.length; i++) {
       const key1 = keys1[i];
       const key2 = keys2[i];
-      if (!(key1 in keys2)) return false;
+      if (!(key1 in keys2)) { return false; };
 
       const value1 = objectOne[key1];
       const value2 = objectTwo[key2];
 
-      if (typeof value1 === 'object' && typeof value2 === 'object') {
+      if (typeof value1 === "object" && typeof value2 === "object") {
         const keysMatch = deepEqual(value1, value2);
-        if (!keysMatch) return false;
+        if (!keysMatch) { return false; };
       }
     }
 
@@ -582,7 +585,7 @@ export const deepEqual = function (objectOne: any, objectTwo: any): boolean {
     return true;
   }
   return false;
-}
+};
 
 export const matchTypes = deepEqual;
 
@@ -595,7 +598,7 @@ export const matchTypes = deepEqual;
  */
 export const matchValues = function (objectOne: any, objectTwo: any): boolean {
   if (typeof objectOne !== "object") {
-    if (typeof objectOne === typeof objectTwo) return true;
+    if (typeof objectOne === typeof objectTwo) { return true; };
     return false;
   } else if (typeof objectOne === "object") {
 
@@ -606,21 +609,21 @@ export const matchValues = function (objectOne: any, objectTwo: any): boolean {
     const keys1 = Object.keys(objectOne);
     const keys2 = Object.keys(objectTwo);
 
-    if (keys1.length !== keys2.length) return false;
+    if (keys1.length !== keys2.length) { return false; };
 
     for (let i = 0; i < keys1.length; i++) {
       const key1 = keys1[i];
       const key2 = keys2[i];
-      if (!(key1 in keys2)) return false;
+      if (!(key1 in keys2)) { return false; };
 
       const value1 = objectOne[key1];
       const value2 = objectTwo[key2];
 
-      if (typeof value1 === 'object' && typeof value2 === 'object') {
+      if (typeof value1 === "object" && typeof value2 === "object") {
         const keysMatch = matchValues(value1, value2);
-        if (!keysMatch) return false;
+        if (!keysMatch) { return false; };
       } else {
-        if (value1 !== value2) return false;
+        if (value1 !== value2) { return false; };
       }
     }
 
@@ -631,7 +634,7 @@ export const matchValues = function (objectOne: any, objectTwo: any): boolean {
     return true;
   }
   return false;
-}
+};
 
 // // Example usage:
 // const objectOne = {
@@ -666,10 +669,10 @@ export const diff = function (objectOne: any, objectTwo: any): any {
   const keys1 = Object.keys(objectOne);
   const keys2 = Object.keys(objectTwo);
   const uniqueKeys = new Set([...keys1, ...keys2]);
-  const diffKeys = [...uniqueKeys].filter(key => {
+  const diffKeys = [...uniqueKeys].filter((key) => {
     const val1 = objectOne[key];
     const val2 = objectTwo[key];
-    if (typeof val1 === 'object' && typeof val2 === 'object') {
+    if (typeof val1 === "object" && typeof val2 === "object") {
       return !(diff(val1, val2).length === 0);
       // return diff(val1, val2).length !== 0;
       // return !diff(val1, val2).length === 0;
@@ -677,7 +680,7 @@ export const diff = function (objectOne: any, objectTwo: any): any {
     return val1 !== val2;
   });
   return diffKeys;
-}
+};
 
 
 // // Example usage:
@@ -712,15 +715,15 @@ export const diff = function (objectOne: any, objectTwo: any): any {
 export const intersection = function (objectOne: any, objectTwo: any): any {
   const keys1 = Object.keys(objectOne);
   const keys2 = Object.keys(objectTwo);
-  const commonKeys = keys1.filter(key => keys2.includes(key));
-  const intersectionKeys = commonKeys.filter(key => {
+  const commonKeys = keys1.filter((key) => keys2.includes(key));
+  const intersectionKeys = commonKeys.filter((key) => {
     const val1 = objectOne[key];
     const val2 = objectTwo[key];
-    if (typeof val1 === 'object' && typeof val2 === 'object') {
+    if (typeof val1 === "object" && typeof val2 === "object") {
       return intersection(val1, val2).length > 0;
     }
     return val1 === val2;
   });
   return intersectionKeys;
-}
+};
 

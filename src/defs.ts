@@ -1,20 +1,20 @@
 /**
- * 
+ *
  * Package: diff-match
  * Author: Ganesh B
- * Description: 
+ * Description:
  * Install: npm i diff-match --save
  * Github: https://github.com/ganeshkbhat/diff-match
  * npmjs Link: https://www.npmjs.com/package/diff-match
  * File: src/core/
  * File Description: Compare, match, and get the types of (primitives) objects
- * 
- * 
+ *
+ *
 */
 
 /* eslint no-console: 0 */
 
-'use strict';
+"use strict";
 
 export const inbuilt = ["string", "number", "boolean", "null", "undefined", "bigint", "symbol", "set", "array", "object", "function"];
 export const extendedtypes = [...inbuilt, "float", "nan"];

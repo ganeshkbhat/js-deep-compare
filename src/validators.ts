@@ -1,31 +1,31 @@
 /**
- * 
+ *
  * Package: jstypes
  * Author: Ganesh B
- * Description: 
+ * Description:
  * Install: npm i jstypes --save
  * Github: https://github.com/ganeshkbhat/jstypes
  * npmjs Link: https://www.npmjs.com/package/jstypes
  * File: .js
- * File Description: 
- * 
- * 
+ * File Description:
+ *
+ *
 */
 
-'use strict';
+"use strict";
 
-import { inbuilt, extendedtypes, typedefs } from "./defs";
+import { extendedtypes, inbuilt, typedefs } from "./defs";
 
 /**
  *
  *
  * @param {*} obj
- * @return {*} 
+ * @return {*}
  */
 export function getObjectMethods(obj: any) {
     const methods = [];
     for (const prop in obj) {
-        if (typeof obj[prop] === 'function') {
+        if (typeof obj[prop] === "function") {
             methods.push(prop);
         }
     }
@@ -37,18 +37,19 @@ export function getObjectMethods(obj: any) {
  *
  * @param {*} obj
  * @param {*} inst
- * @return {*} 
+ * @return {*}
  */
 export function checkInstanceOfMethod(obj: any, inst) {
     let method;
     for (const prop in inst) {
-        if (typeof inst[prop] === 'function') {
+        if (typeof inst[prop] === "function") {
             if (obj instanceof inst[prop]) {
                 method = inst[prop];
-            };
+                ;
+            }
         }
+        return false;
     }
-    return false;
 }
 
 // String
@@ -107,47 +108,47 @@ export function isArray(obj: any) {
     );
 }
 
-// Uint16Array
-export function Uint16Array(obj: any) { }
+// // Uint16Array
+// export function Uint16Array(obj: any) { }
 
-// Uint32Array
-export function Uint32Array(obj: any) { }
+// // Uint32Array
+// export function Uint32Array(obj: any) { }
 
-// Uint8Array
-export function Uint8Array(obj: any) { }
+// // Uint8Array
+// export function Uint8Array(obj: any) { }
 
-// Uint8ClampedArray
-export function Uint8ClampedArray(obj: any) { }
+// // Uint8ClampedArray
+// export function Uint8ClampedArray(obj: any) { }
 
-// Int16Array
-export function Int16Array(obj: any) { }
+// // Int16Array
+// export function Int16Array(obj: any) { }
 
-// Int32Array
-export function Int32Array(obj: any) { }
+// // Int32Array
+// export function Int32Array(obj: any) { }
 
-// Int8Array
-export function Int8Array(obj: any) { }
+// // Int8Array
+// export function Int8Array(obj: any) { }
 
-// Float32Array
-export function Float32Array(obj: any) { }
+// // Float32Array
+// export function Float32Array(obj: any) { }
 
-// Float64Array
-export function Float64Array(obj: any) { }
+// // Float64Array
+// export function Float64Array(obj: any) { }
 
-// BigInt64Array
-export function BigInt64Array(obj: any) { }
+// // BigInt64Array
+// export function BigInt64Array(obj: any) { }
 
-// BigUint64Array
-export function BigUint64Array(obj: any) { }
+// // BigUint64Array
+// export function BigUint64Array(obj: any) { }
 
-// TypedArray - check all TypedArrays above
-export function TypedArray(obj: any) { }
+// // TypedArray - check all TypedArrays above
+// export function TypedArray(obj: any) { }
 
-// ArrayBuffer
-export function ArrayBuffer(obj: any) { }
+// // ArrayBuffer
+// export function ArrayBuffer(obj: any) { }
 
-// SharedArrayBuffer
-export function SharedArrayBuffer(obj: any) { }
+// // SharedArrayBuffer
+// export function SharedArrayBuffer(obj: any) { }
 
 // Set
 export function isSet(obj: any) {
@@ -156,7 +157,7 @@ export function isSet(obj: any) {
 
 // Object
 export function isObject(obj: any) {
-    obj instanceof Object || typeof obj === "object"
+    return obj instanceof Object || typeof obj === "object";
 }
 
 // Function
@@ -187,7 +188,7 @@ export function isGlobalThis(obj: any) {
 export function isGenerator(obj: any) {
     return (
         typeof obj === "function" ||
-        Boolean(obj && obj.constructor && obj.call && obj.apply && obj.constructor.name === 'GeneratorFunction')
+        Boolean(obj && obj.constructor && obj.call && obj.apply && obj.constructor.name === "GeneratorFunction")
     );
 }
 
@@ -195,7 +196,7 @@ export function isGenerator(obj: any) {
 export function isGeneratorFunction(obj: any) {
     return (
         typeof obj === "function" ||
-        Boolean(obj && obj.constructor && obj.call && obj.apply && obj.constructor.name === 'AsyncGeneratorFunction')
+        Boolean(obj && obj.constructor && obj.call && obj.apply && obj.constructor.name === "AsyncGeneratorFunction")
     );
 }
 
@@ -203,7 +204,7 @@ export function isGeneratorFunction(obj: any) {
 export function isAsyncGenerator(obj: any) {
     return (
         typeof obj === "function" ||
-        Boolean(obj && obj.constructor && obj.call && obj.apply && obj.constructor.name === 'AsyncGenerator')
+        Boolean(obj && obj.constructor && obj.call && obj.apply && obj.constructor.name === "AsyncGenerator")
     );
 }
 
@@ -211,7 +212,7 @@ export function isAsyncGenerator(obj: any) {
 export function isAsyncGeneratorFunction(obj: any) {
     return (
         typeof obj === "function" ||
-        Boolean(obj && obj.constructor && obj.call && obj.apply && obj.constructor.name === 'AsyncGeneratorFunction')
+        Boolean(obj && obj.constructor && obj.call && obj.apply && obj.constructor.name === "AsyncGeneratorFunction")
     );
 }
 
@@ -219,7 +220,7 @@ export function isAsyncGeneratorFunction(obj: any) {
 export function isPromise(obj: any) {
     return (
         typeof obj === "function" || obj instanceof Promise ||
-        Boolean(obj && obj.constructor && obj.call && obj.apply && obj.constructor.name === 'Promise')
+        Boolean(obj && obj.constructor && obj.call && obj.apply && obj.constructor.name === "Promise")
     );
 }
 
@@ -272,13 +273,13 @@ export function isDeprecatedescape(obj: any) {
 }
 
 // eval()
-export function isEval(obj: any) { 
-    return (typeof obj === "function" || Boolean(obj && obj.constructor && obj.call && obj.apply)); 
+export function isEval(obj: any) {
+    return (typeof obj === "function" || Boolean(obj && obj.constructor && obj.call && obj.apply));
 }
 
 // Error
-export function isError(obj: any) { 
-    return typeof obj === "object" || obj instanceof Error; 
+export function isError(obj: any) {
+    return typeof obj === "object" || obj instanceof Error;
 }
 
 // EvalError
@@ -316,8 +317,8 @@ export function isAggregateError(obj: any) {
     return typeof obj === "object" || obj instanceof AggregateError;
 }
 
-// Non-standardInternalError
-export function isNonStandardInternalError(obj: any) { }
+// // Non-standardInternalError
+// export function isNonStandardInternalError(obj: any) { }
 
 // Map
 export function isMap(obj: any) {
@@ -351,7 +352,7 @@ export function isDate(obj, dateFormat) {
 
 // Date
 export function isDateObject(obj: any) {
-    return typeof obj === 'object' && obj.constructor === Date.constructor;
+    return typeof obj === "object" && obj.constructor === Date.constructor;
 }
 
 // JSON
@@ -378,14 +379,14 @@ export function isReflect(obj: any) {
 export function isReflectMethod(obj: any) {
     // const reflectFunction = Reflect.get;
     // console.log(isReflectFunction(reflectFunction));   // true
-    return (typeof obj === 'function' && Reflect.hasOwnProperty(obj.name)) || (typeof obj === 'function' && Reflect[obj.name] === obj);
+    return (typeof obj === "function" && Reflect.hasOwnProperty(obj.name)) || (typeof obj === "function" && Reflect[obj.name] === obj);
 }
 
 // ReflectMethod
 export function isReflectMethodInstance(obj: any) {
     // const reflectFunction = Reflect.get;
     // console.log(isReflectFunction(reflectFunction));   // true
-    return (typeof obj === 'function' && Reflect.hasOwnProperty(obj.name)) || (typeof obj === 'function' && obj instanceof Reflect[obj.name]);
+    return (typeof obj === "function" && Reflect.hasOwnProperty(obj.name)) || (typeof obj === "function" && obj instanceof Reflect[obj.name]);
 }
 
 // RegExp
@@ -395,7 +396,7 @@ export function isRegExp(obj: any) {
 
 // Intl
 export function isIntl(obj: any) {
-    return typeof obj === 'object' && obj.constructor === Intl.constructor;
+    return typeof obj === "object" && obj.constructor === Intl.constructor;
 }
 
 // IntlMethod
@@ -403,14 +404,13 @@ export function isIntlMethod(obj: any) {
     return checkInstanceOfMethod(obj, Intl);
 }
 
-// FinalizationRegistry
-export function isFinalizationRegistry(obj: any) {
-
-}
+// // FinalizationRegistry
+// export function isFinalizationRegistry(obj: any) {
+// }
 
 // Math
 export function isMath(obj: any) {
-    return typeof obj === 'object' && obj.constructor === Math.constructor;
+    return typeof obj === "object" && obj.constructor === Math.constructor;
 }
 
 // MathMethod
@@ -418,10 +418,9 @@ export function isMathMethod(obj: any) {
     return checkInstanceOfMethod(obj, Math);
 }
 
-// parseFloat()
-export function isFloat(obj: any) {
-
-}
+// // parseFloat()
+// export function isFloat(obj: any) {
+// }
 
 // isNotNaN() notNaN()
 export function notNaN(obj: any) {
@@ -453,7 +452,7 @@ export function isFiniteFunction(obj: any) {
 
 // Atomics
 export function isAtomics(obj: any) {
-    return typeof obj === 'object' && obj.constructor === Atomics.constructor;
+    return typeof obj === "object" && obj.constructor === Atomics.constructor;
 }
 
 // Atomics
@@ -492,7 +491,7 @@ export default {
     Float64Array,
     BigInt64Array,
     BigUint64Array,
-    TypedArray,
+    // TypedArray,
     ArrayBuffer,
     SharedArrayBuffer,
     isObject,
@@ -519,7 +518,7 @@ export default {
     isTypeError,
     isURIError,
     isAggregateError,
-    isNonStandardInternalError,
+    // isNonStandardInternalError,
     isMap,
     isWeakMap,
     isWeakRef,
@@ -532,9 +531,9 @@ export default {
     isReflect,
     isRegExp,
     isIntl,
-    isFinalizationRegistry,
+    // isFinalizationRegistry,
     isMath,
-    isFloat,
+    // isFloat,
     isNotNaN,
     isNaN,
     isInfinity,
@@ -545,4 +544,4 @@ export default {
     inbuilt,
     extendedtypes,
     typedefs
-}
+};
