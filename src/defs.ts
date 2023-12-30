@@ -1,19 +1,20 @@
 /**
  * 
- * Package: jstypes
+ * Package: diff-match
  * Author: Ganesh B
  * Description: 
- * Install: npm i jstypes --save
- * Github: https://github.com/ganeshkbhat/jstypes
- * npmjs Link: https://www.npmjs.com/package/jstypes
- * File: .js
- * File Description: 
+ * Install: npm i diff-match --save
+ * Github: https://github.com/ganeshkbhat/diff-match
+ * npmjs Link: https://www.npmjs.com/package/diff-match
+ * File: src/core/
+ * File Description: Compare, match, and get the types of (primitives) objects
  * 
  * 
 */
 
-'use strict';
+/* eslint no-console: 0 */
 
+'use strict';
 
 export let inbuilt = ["string", "number", "boolean", "null", "undefined", "bigint", "symbol", "set", "array", "object", "function"];
 export let extendedtypes = [...inbuilt, "int", "float", "nan"];
@@ -28,7 +29,6 @@ export const typedefs = [...extendedtypes,
     "Map", "WeakMap", "WeakRef", "WeakSet", "Set",
     "DataView", "Date", "JSON", "Proxy", "Reflect", "RegExp", "Intl", "FinalizationRegistry"
 ];
-
 
 // undefined
 // String

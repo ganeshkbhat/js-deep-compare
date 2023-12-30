@@ -1,8 +1,26 @@
+/**
+ * 
+ * Package: diff-match
+ * Author: Ganesh B
+ * Description: 
+ * Install: npm i diff-match --save
+ * Github: https://github.com/ganeshkbhat/diff-match
+ * npmjs Link: https://www.npmjs.com/package/diff-match
+ * File: src/core/
+ * File Description: Compare, match, and get the types of (primitives) objects
+ * 
+ * 
+*/
+
+/* eslint no-console: 0 */
+
+'use strict';
+
 import { expect } from "chai";
 import sinon from "sinon";
 import { describe, it } from "mocha";
 
-import { matchValues } from "../src/index";
+import { matchValues } from "../src/matchers";
 
 describe('Object Comparison Tests', () => {
   it('should compare two equal objects', () => {
