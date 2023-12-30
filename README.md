@@ -1,2 +1,3 @@
-# js-deep-compare
-Deep compare JS objects and check types using js-deep-compare module
+# diff-match
+Deep compare JS objects, check types, diff, and find intersect using the npm module
+
