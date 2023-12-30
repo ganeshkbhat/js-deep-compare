@@ -2,7 +2,7 @@ import { expect } from "chai";
 import sinon from "sinon";
 import { describe, it } from "mocha";
 
-import { which } from "../src/index";
+import { is } from "../src/index";
 
 
 describe('Object Comparison Tests', () => {

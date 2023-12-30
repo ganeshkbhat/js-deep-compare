@@ -633,15 +633,26 @@ export function matchValues(objectOne: any, objectTwo: any): boolean {
   return false;
 }
 
-/**
- *
- *
- * @export
- * @param {*} objectOne
- * @param {*} objectTwo
- * @return {*}  {*}
- */
-export function diff(objectOne: any, objectTwo: any): any {}
+// // Example usage:
+// const objectOne = {
+//   a: 1,
+//   b: {
+//     c: 2,
+//     d: 3,
+//   },
+//   e: [4, 5, 6],
+// };
+// const objectTwo = {
+//   a: 1,
+//   b: {
+//     c: 2,
+//     d: 4, // Different value
+//   },
+//   e: [4, 5, 6],
+//   f: 7, // Extra key
+// };
+// const differences = deepObjectDiff(objectOne, objectTwo);
+// console.log(differences); // Output: ['b.d', 'f']
 
 /**
  *
@@ -651,4 +662,65 @@ export function diff(objectOne: any, objectTwo: any): any {}
  * @param {*} objectTwo
  * @return {*}  {*}
  */
-export function intersection(objectOne: any, objectTwo: any): any {}
+export function diff(objectOne: any, objectTwo: any): any {
+  const keys1 = Object.keys(objectOne);
+  const keys2 = Object.keys(objectTwo);
+  const uniqueKeys = new Set([...keys1, ...keys2]);
+  const diffKeys = [...uniqueKeys].filter(key => {
+    const val1 = objectOne[key];
+    const val2 = objectTwo[key];
+    if (typeof val1 === 'object' && typeof val2 === 'object') {
+      return !(diff(val1, val2).length === 0);
+      // return diff(val1, val2).length !== 0;
+      // return !diff(val1, val2).length === 0;
+    }
+    return val1 !== val2;
+  });
+  return diffKeys;
+}
+
+
+// // Example usage:
+// const objectOne = {
+//   a: 1,
+//   b: {
+//     c: 2,
+//     d: 3,
+//   },
+//   e: [4, 5, 6],
+// };
+// const objectTwo = {
+//   a: 1,
+//   b: {
+//     c: 2,
+//     d: 4, // Different value
+//   },
+//   e: [4, 5, 6],
+//   f: 7, // Extra key
+// };
+// const inter = intersection(objectOne, objectTwo);
+// console.log(inter); // Output: ['a', 'b.c', 'e']
+
+/**
+ *
+ *
+ * @export
+ * @param {*} objectOne
+ * @param {*} objectTwo
+ * @return {*}  {*}
+ */
+export function intersection(objectOne: any, objectTwo: any): any {
+  const keys1 = Object.keys(objectOne);
+  const keys2 = Object.keys(objectTwo);
+  const commonKeys = keys1.filter(key => keys2.includes(key));
+  const intersectionKeys = commonKeys.filter(key => {
+    const val1 = objectOne[key];
+    const val2 = objectTwo[key];
+    if (typeof val1 === 'object' && typeof val2 === 'object') {
+      return intersection(val1, val2).length > 0;
+    }
+    return val1 === val2;
+  });
+  return intersectionKeys;
+}
+
