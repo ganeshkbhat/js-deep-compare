@@ -17,9 +17,9 @@
 'use strict';
 
 export let inbuilt = ["string", "number", "boolean", "null", "undefined", "bigint", "symbol", "set", "array", "object", "function"];
-export let extendedtypes = [...inbuilt, "int", "float", "nan"];
+export let extendedtypes = [...inbuilt, "float", "nan"];
 export const typedefs = [...extendedtypes,
-    "String", "Boolean", "Math", "Number", "BigInt", "Float", "Symbol", "Object", "null", "undefined", "Int", "NaN",
+    "String", "Boolean", "Math", "Number", "BigInt", "Float", "Symbol", "Object", "null", "undefined", "NaN",
     "Infinity", /*non-js object*/ "Finite", "Atomics", "globalThis",
     "Array", "Uint16Array", "Uint32Array", "Uint8Array", "Uint8ClampedArray", "Int16Array", "Int32Array", "Int8Array",
     "Float32Array", "Float64Array", "BigInt64Array", "BigUint64Array", /*non-js object*/ "TypedArray", "ArrayBuffer", "SharedArrayBuffer",
@@ -29,6 +29,7 @@ export const typedefs = [...extendedtypes,
     "Map", "WeakMap", "WeakRef", "WeakSet", "Set",
     "DataView", "Date", "JSON", "Proxy", "Reflect", "RegExp", "Intl", "FinalizationRegistry"
 ];
+
 
 // undefined
 // String
@@ -40,15 +41,11 @@ export const typedefs = [...extendedtypes,
 // parseInt()
 // BigInt
 // parseFloat()
-
 // isNaN()
 // NaN
-
 // Infinity
 // isFinite()
-
 // Atomics
-
 // Symbol
 
 // Array
@@ -81,8 +78,6 @@ export const typedefs = [...extendedtypes,
 // SyntaxError
 // TypeError
 // URIError
-
-
 // AggregateError
 // Non-standardInternalError
 
@@ -95,14 +90,12 @@ export const typedefs = [...extendedtypes,
 // GeneratorFunction
 // AsyncGenerator
 // AsyncGeneratorFunction
-
 // Promise
 
 // URIComponent
 
 // decodeURI()
 // decodeURIComponent()
-
 // encodeURI()
 // encodeURIComponent()
 // Deprecatedunescape()
@@ -128,5 +121,4 @@ export const typedefs = [...extendedtypes,
 // RegExp
 
 // Intl
-
 // FinalizationRegistry
