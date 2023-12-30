@@ -16,8 +16,8 @@
 
 'use strict';
 
-export let inbuilt = ["string", "number", "boolean", "null", "undefined", "bigint", "symbol", "set", "array", "object", "function"];
-export let extendedtypes = [...inbuilt, "float", "nan"];
+export const inbuilt = ["string", "number", "boolean", "null", "undefined", "bigint", "symbol", "set", "array", "object", "function"];
+export const extendedtypes = [...inbuilt, "float", "nan"];
 export const typedefs = [...extendedtypes,
     "String", "Boolean", "Math", "Number", "BigInt", "Float", "Symbol", "Object", "null", "undefined", "NaN",
     "Infinity", /*non-js object*/ "Finite", "Atomics", "globalThis",

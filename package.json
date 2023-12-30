@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --require ts-node/register tests/*.test.ts",
-    "lint": "eslint src --fix --ext .ts --ignore-path .gitignore",
+    "lint": "eslint . --fix --ext .ts --ignore-path .gitignore",
     "build": "del-cli lib && tsc",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npm run test && npm run build",
     "postversion": "git push --follow-tags && npm publish"
   },
   "keywords": [],
@@ -19,6 +19,8 @@
     "@commitlint/prompt-cli": "^18.4.3",
     "@types/mocha": "^10.0.6",
     "@types/node": "^20.10.5",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
     "@typicode/eslint-config": "^1.2.0",
     "chai": "^5.0.0",
     "del-cli": "^5.1.0",

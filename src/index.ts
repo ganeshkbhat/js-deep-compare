@@ -16,3 +16,14 @@
 
 'use strict';
 
+import * as defs from "./defs";
+import * as types from "./types";
+import * as validator from "./validators";
+
+export const definitions = defs;
+export const typeChecks = types;
+export const validators = validators;
+
+export default {
+  definitions, typeChecks, validators
+}

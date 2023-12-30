@@ -22,7 +22,7 @@
  * @export
  * @param {*} obj
  */
-export function which(obj: any): any | null | undefined {
+export const which = function (obj: any): any | null | undefined {
   let t;
   switch (obj) {
     case obj instanceof String:
@@ -194,7 +194,7 @@ export function which(obj: any): any | null | undefined {
  * @param {string} typename
  * @return {*} 
  */
-export function typeObject(typename: string): any | null | undefined {
+export const typeObject = function (typename: string): any | null | undefined {
   let t;
   switch (typename) {
     case 'string':
@@ -522,7 +522,7 @@ export function typeObject(typename: string): any | null | undefined {
  * @param {*} object
  * @return {*}  {(string | void)}
  */
-export function is(object: any, returnType?: string): string | void {
+export const is = function (object: any, returnType?: string): string | void {
   let tmpType;
   if (typeof object !== "object") {
     tmpType = typeof object;
@@ -546,7 +546,7 @@ export function is(object: any, returnType?: string): string | void {
  * @param {*} objectTwo
  * @return {*}  {boolean}
  */
-export function deepEqual(objectOne: any, objectTwo: any): boolean {
+export const deepEqual = function (objectOne: any, objectTwo: any): boolean {
   if (typeof objectOne !== "object") {
     if (typeof objectOne === typeof objectTwo) return true;
     return false;
@@ -593,7 +593,7 @@ export const matchTypes = deepEqual;
  * @param {*} objectTwo
  * @return {*}  {boolean}
  */
-export function matchValues(objectOne: any, objectTwo: any): boolean {
+export const matchValues = function (objectOne: any, objectTwo: any): boolean {
   if (typeof objectOne !== "object") {
     if (typeof objectOne === typeof objectTwo) return true;
     return false;
@@ -662,7 +662,7 @@ export function matchValues(objectOne: any, objectTwo: any): boolean {
  * @param {*} objectTwo
  * @return {*}  {*}
  */
-export function diff(objectOne: any, objectTwo: any): any {
+export const diff = function (objectOne: any, objectTwo: any): any {
   const keys1 = Object.keys(objectOne);
   const keys2 = Object.keys(objectTwo);
   const uniqueKeys = new Set([...keys1, ...keys2]);
@@ -709,7 +709,7 @@ export function diff(objectOne: any, objectTwo: any): any {
  * @param {*} objectTwo
  * @return {*}  {*}
  */
-export function intersection(objectOne: any, objectTwo: any): any {
+export const intersection = function (objectOne: any, objectTwo: any): any {
   const keys1 = Object.keys(objectOne);
   const keys2 = Object.keys(objectTwo);
   const commonKeys = keys1.filter(key => keys2.includes(key));
