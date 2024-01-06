@@ -31,94 +31,12 @@ export const typedefs = [...extendedtypes,
 ];
 
 
-// undefined
-// String
-// Boolean
-
-// Math
-
-// Number
 // parseInt()
-// BigInt
 // parseFloat()
 // isNaN()
-// NaN
-// Infinity
 // isFinite()
-// Atomics
-// Symbol
-
-// Array
-
-// Uint16Array
-// Uint32Array
-// Uint8Array
-// Uint8ClampedArray
-
-// Int16Array
-// Int32Array
-// Int8Array
-
-// Float32Array
-// Float64Array
-
-// BigInt64Array
-// BigUint64Array
-
-// TypedArray
-
-// ArrayBuffer
-// SharedArrayBuffer
-
-// Error
-
-// EvalError
-// RangeError
-// ReferenceError
-// SyntaxError
-// TypeError
-// URIError
-// AggregateError
-// Non-standardInternalError
-
-// Function
-// AsyncFunction
-
 // globalThis
-
-// Generator
-// GeneratorFunction
-// AsyncGenerator
-// AsyncGeneratorFunction
-// Promise
-
 // URIComponent
-
-// decodeURI()
-// decodeURIComponent()
-// encodeURI()
-// encodeURIComponent()
-// Deprecatedunescape()
-// Deprecatedescape()
 // eval()
-
-// Map
-// WeakMap
-
 // Object
-// WeakRef
 
-// WeakSet
-// Set
-
-// DataView
-// Date
-
-// JSON
-// Proxy
-
-// Reflect
-// RegExp
-
-// Intl
-// FinalizationRegistry
