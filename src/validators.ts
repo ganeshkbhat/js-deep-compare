@@ -218,63 +218,81 @@ export function isAsyncGeneratorFunction(obj: any) {
 
 // Promise
 export function isPromise(obj: any) {
+    // https://debugpointer.com/featured/check-if-an-object-is-a-promise
     return (
-        typeof obj === "function" || obj instanceof Promise ||
-        Boolean(obj && obj.constructor && obj.call && obj.apply && obj.constructor.name === "Promise")
+        (!!obj) &&
+        (typeof obj === "object" || typeof obj === "function") &&
+        (obj.constructor && obj.call && obj.apply) &&
+        (
+            obj instanceof Promise ||
+            Object.prototype.toString.call(obj) === "[object Promise]" ||
+            Boolean(obj.constructor.name === "Promise") ||
+            (typeof obj.then === "function")
+        )
     );
 }
 
 // decodeURI()
 export function isDecodeURI(obj: any) {
     return (
-        typeof obj === "function" ||
-        Boolean(obj && obj.constructor && obj.call && obj.apply)
+        !!obj &&
+        !!isFunction(obj) &&
+        obj.name === "decodeURI"
     );
 }
 
 // decodeURIComponent()
 export function isDecodeURIComponent(obj: any) {
     return (
-        typeof obj === "function" ||
-        Boolean(obj && obj.constructor && obj.call && obj.apply)
+        !!obj &&
+        !!isFunction(obj) &&
+        obj.name === "decodeURIComponent"
     );
 }
 
 // encodeURI()
 export function isEncodeURI(obj: any) {
     return (
-        typeof obj === "function" ||
-        Boolean(obj && obj.constructor && obj.call && obj.apply)
+        !!obj &&
+        !!isFunction(obj) &&
+        obj.name === "encodeURI"
     );
 }
 
 // encodeURIComponent()
 export function isEncodeURIComponent(obj: any) {
     return (
-        typeof obj === "function" ||
-        Boolean(obj && obj.constructor && obj.call && obj.apply)
+        !!obj &&
+        !!isFunction(obj) &&
+        obj.name === "encodeURIComponent"
     );
 }
 
 // Deprecatedunescape()
 export function isDeprecatedunescape(obj: any) {
     return (
-        typeof obj === "function" ||
-        Boolean(obj && obj.constructor && obj.call && obj.apply)
+        !!obj &&
+        !!isFunction(obj) &&
+        obj.name === "unescape"
     );
 }
 
 // Deprecatedescape()
 export function isDeprecatedescape(obj: any) {
     return (
-        typeof obj === "function" ||
-        Boolean(obj && obj.constructor && obj.call && obj.apply)
+        !!obj &&
+        !!isFunction(obj) &&
+        obj.name === "escape"
     );
 }
 
 // eval()
 export function isEval(obj: any) {
-    return (typeof obj === "function" || Boolean(obj && obj.constructor && obj.call && obj.apply));
+    return (
+        !!obj &&
+        !!isFunction(obj) &&
+        obj.name === "eval"
+    );
 }
 
 // Error
@@ -314,6 +332,7 @@ export function isURIError(obj: any) {
 
 // AggregateError
 export function isAggregateError(obj: any) {
+    // // AggregateError error - import it
     return typeof obj === "object" || obj instanceof AggregateError;
 }
 
@@ -322,32 +341,37 @@ export function isAggregateError(obj: any) {
 
 // Map
 export function isMap(obj: any) {
-    return typeof obj === "object" || obj instanceof Map;
+    return (typeof obj === "object" || typeof obj === "function") || obj instanceof Map || Map.name === "Map";
 }
 
 // WeakMap
 export function isWeakMap(obj: any) {
-    return typeof obj === "object" || obj instanceof WeakMap;
+    return (typeof obj === "object" || typeof obj === "function") || obj instanceof WeakMap || WeakMap.name === "WeakMap";
 }
 
 // WeakRef
 export function isWeakRef(obj: any) {
-    // return typeof obj === "object" || obj instanceof WeakRef;
+    // // WeakRef error - import it
+    // return (typeof obj === "object" || typeof obj === "function") || obj instanceof WeakRef || WeakRef.name === "WeakRef";
 }
 
 // WeakSet
 export function isWeakSet(obj: any) {
-    return typeof obj === "object" || obj instanceof WeakSet;
+    return (typeof obj === "object" || typeof obj === "function") || obj instanceof WeakSet || WeakSet.name === "WeakMap";
 }
 
 // DataView
 export function isDataView(obj: any) {
-    return typeof obj === "object" || obj instanceof DataView;
+    return (typeof obj === "object" || typeof obj === "function") || typeof obj === "object" || obj instanceof DataView || DataView.name === "WeakMap";
 }
 
 // Date
 export function isDate(obj, dateFormat) {
-    return !isNaN(new Date(obj)) && obj.length === dateFormat.length;
+    try {
+        return (!!new Date(obj) || !isNaN(new Date(obj)) || obj.length === dateFormat.length);
+    } catch (e) {
+        return false;
+    }
 }
 
 // Date
@@ -372,7 +396,8 @@ export function isProxy(obj: any) {
 
 // Reflect
 export function isReflect(obj: any) {
-    return typeof obj === "object" || obj instanceof Reflect;
+    // // Reflect error - check validation again
+    // return typeof obj === "object" || obj instanceof Reflect;
 }
 
 // ReflectMethod
@@ -422,13 +447,14 @@ export function isMathMethod(obj: any) {
 // export function isFloat(obj: any) {
 // }
 
-// isNotNaN() notNaN()
+// isNotNaN() notNaN() isInteger()
 export function notNaN(obj: any) {
-    return !isNaN(obj);
+    return !isNaN(obj) || typeof obj === "number" || typeof obj === "bigint";
 }
 
-// isNotNaN() notNaN()
+// isNotNaN() notNaN() isInteger()
 const isNotNaN = notNaN;
+const isInteger = notNaN;
 
 // NaN
 export function isNaN(obj: any) {
