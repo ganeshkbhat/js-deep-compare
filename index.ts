@@ -16,4 +16,5 @@
 
 'use strict';
 
-export { default as validators } from "./src";
+export { definitions, typeChecks, validators, default as default } from "./src";
+
